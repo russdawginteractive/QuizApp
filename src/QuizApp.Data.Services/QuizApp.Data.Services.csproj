@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuizApp.Data.Core\QuizApp.Data.Core.csproj" />
+    <ProjectReference Include="..\QuizApp.Data.Dal\QuizApp.Data.Dal.csproj" />
+  </ItemGroup>
+
+</Project>
