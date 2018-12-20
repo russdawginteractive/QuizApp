@@ -10,6 +10,7 @@ namespace QuizApp.Data.Dal.Models
 
 		[Required]
 		public string Title { get; set; }
+		public Quiz Quiz { get; set; }
 		public int? CorrectAnswerId { get; set; }
 		[ForeignKey("CorrectAnswerId")]
 		public Answer CorrectAnswer { get; set; }

@@ -10,6 +10,7 @@ namespace QuizApp.Data.Services
 		public static IServiceCollection DataServicesStartup(this IServiceCollection services)
 		{
 			services.AddScoped<IdentityDbContext<IdentityUser>, DalContext>();
+			services.AddTransient<UserManager<IdentityUser>>();
 			return services;
 		}
 	}

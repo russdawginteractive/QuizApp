@@ -7,6 +7,6 @@ namespace QuizApp.Data.Core.Interfaces
 		/// <summary>
 		/// Save method.
 		/// </summary>
-		void Save();
+		bool Save();
 	}
 }

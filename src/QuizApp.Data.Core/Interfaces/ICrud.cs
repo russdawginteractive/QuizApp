@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq.Expressions;
 
 namespace QuizApp.Data.Core.Interfaces
 {
@@ -6,9 +7,8 @@ namespace QuizApp.Data.Core.Interfaces
 	{
 		void Create(T entity);
 		void Update(T entityToUpdate);
-		void Delete(Func<T, bool> where);
+		void Delete(Expression<Func<T, bool>> where);
 		void Delete(object id);
-		void Delete(T entityToDelete);
 
 	}
 }

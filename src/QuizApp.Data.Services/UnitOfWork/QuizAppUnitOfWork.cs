@@ -1,21 +1,20 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QuizApp.Data.Core.Common;
 using QuizApp.Data.Dal.Models;
-using System;
 
 namespace QuizApp.Data.Services.UnitOfWork
 {
 	public class QuizAppUnitOfWork : Abstract.UnitOfWork
 	{
-		private readonly IdentityDbContext _context;
+		private readonly DbContext _context;
 		private CrudRepository<Quiz> _quizRepository;
 		private CrudRepository<Question> _questionRepository;
 		private CrudRepository<Answer> _answerRepository;
 		private CrudRepository<QuizResult> _quizResultRepository;
 		private ReadOnlyRepository<IdentityUser> _userReadOnlyRepository;
 
-		public QuizAppUnitOfWork(IdentityDbContext context):base(context)
+		public QuizAppUnitOfWork(DbContext context):base(context)
 		{
 			_context = context;
 		}

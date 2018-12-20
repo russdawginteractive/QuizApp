@@ -25,6 +25,9 @@ namespace QuizApp.Data.Dal
 				.HasMany(p => p.Questions);
 
 			modelBuilder.Entity<Question>()
+				.HasOne(p => p.Quiz);
+
+			modelBuilder.Entity<Question>()
 				.HasMany(p => p.Answers)
 				.WithOne(p => p.Question)
 				.OnDelete(DeleteBehavior.Cascade);

@@ -43,9 +43,20 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetRoles");
 
                     b.HasData(
-                        new { Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765", ConcurrencyStamp = "3270f485-7002-452f-8ff2-fc53b25f0dd2", Name = "Admin", NormalizedName = "Admin" },
-                        new { Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744", ConcurrencyStamp = "ee369edc-638b-429b-9e81-ebb18f0a979a", Name = "QuizUser", NormalizedName = "Quiz User" }
-                    );
+                        new
+                        {
+                            Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765",
+                            ConcurrencyStamp = "3270f485-7002-452f-8ff2-fc53b25f0dd2",
+                            Name = "Admin",
+                            NormalizedName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744",
+                            ConcurrencyStamp = "ee369edc-638b-429b-9e81-ebb18f0a979a",
+                            Name = "QuizUser",
+                            NormalizedName = "Quiz User"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -119,9 +130,38 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetUsers");
 
                     b.HasData(
-                        new { Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", AccessFailedCount = 0, ConcurrencyStamp = "9e039fd2-d18e-43c8-b0bf-531e00040443", Email = "russell.griffith+quizapp+admin@gmail.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "russell.griffith+quizapp+admin@gmail.com", NormalizedUserName = "Admin", PasswordHash = "AQAAAAEAACcQAAAAEHrxSiunuYkoJdPo5HdrZu3k9efC9mlHBsxmWTh5RJDavTDDYurW6SpTKjtxg2MApQ==", PhoneNumberConfirmed = false, SecurityStamp = "", TwoFactorEnabled = false, UserName = "admin" },
-                        new { Id = "009dc675-6328-4f92-b206-b3311908e306", AccessFailedCount = 0, ConcurrencyStamp = "5024a0ba-7013-4e3c-86a6-77ddf0e88408", Email = "russell.griffith@gmail.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "russell.griffith@gmail.com", NormalizedUserName = "Russ Dawg Bass", PasswordHash = "AQAAAAEAACcQAAAAEETmB6SbEaGfXSXvp9xS9n174W6geiwS3RoMD2akTdP63IeX8nRIxoaTr1HVOLvsgA==", PhoneNumberConfirmed = false, SecurityStamp = "", TwoFactorEnabled = false, UserName = "russdawgbass" }
-                    );
+                        new
+                        {
+                            Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "9e039fd2-d18e-43c8-b0bf-531e00040443",
+                            Email = "russell.griffith+quizapp+admin@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "russell.griffith+quizapp+admin@gmail.com",
+                            NormalizedUserName = "Admin",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHrxSiunuYkoJdPo5HdrZu3k9efC9mlHBsxmWTh5RJDavTDDYurW6SpTKjtxg2MApQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin"
+                        },
+                        new
+                        {
+                            Id = "009dc675-6328-4f92-b206-b3311908e306",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5024a0ba-7013-4e3c-86a6-77ddf0e88408",
+                            Email = "russell.griffith@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "russell.griffith@gmail.com",
+                            NormalizedUserName = "Russ Dawg Bass",
+                            PasswordHash = "AQAAAAEAACcQAAAAEETmB6SbEaGfXSXvp9xS9n174W6geiwS3RoMD2akTdP63IeX8nRIxoaTr1HVOLvsgA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "russdawgbass"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -175,9 +215,16 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetUserRoles");
 
                     b.HasData(
-                        new { UserId = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", RoleId = "b0dabe9b-f8b7-48f4-b74a-6a6671130765" },
-                        new { UserId = "009dc675-6328-4f92-b206-b3311908e306", RoleId = "402b9b75-2f6d-4f40-8d59-26ef95c51744" }
-                    );
+                        new
+                        {
+                            UserId = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
+                            RoleId = "b0dabe9b-f8b7-48f4-b74a-6a6671130765"
+                        },
+                        new
+                        {
+                            UserId = "009dc675-6328-4f92-b206-b3311908e306",
+                            RoleId = "402b9b75-2f6d-4f40-8d59-26ef95c51744"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>

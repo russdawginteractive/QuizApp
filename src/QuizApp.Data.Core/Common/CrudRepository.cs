@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QuizApp.Data.Core.Interfaces;
 using System;
+using System.Linq.Expressions;
 
 namespace QuizApp.Data.Core.Common
 {
@@ -21,7 +22,7 @@ namespace QuizApp.Data.Core.Common
 			_dbSet.Add(entity);
 		}
 
-		public virtual void Delete(Func<T, bool> where)
+		public virtual void Delete(Expression<Func<T, bool>> where)
 		{
 			throw new NotImplementedException();
 		}
@@ -32,7 +33,7 @@ namespace QuizApp.Data.Core.Common
 			Delete(entityToDelete);
 		}
 
-		public virtual void Delete(T entityToDelete)
+		protected virtual void Delete(T entityToDelete)
 		{
 			if (_context.Entry(entityToDelete).State == EntityState.Detached)
 			{

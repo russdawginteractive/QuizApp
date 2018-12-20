@@ -14,6 +14,8 @@
     <Compile Remove="Migrations\20181216044650_InitialCreate.cs" />
     <Compile Remove="Migrations\20181216044939_InitialCreate.cs" />
     <Compile Remove="Migrations\20181216045141_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181220045721_AddQuizIdToQuestion.cs" />
+    <Compile Remove="Migrations\20181220050028_AddQuizIdToQuestion.cs" />
   </ItemGroup>
 
   <ItemGroup>

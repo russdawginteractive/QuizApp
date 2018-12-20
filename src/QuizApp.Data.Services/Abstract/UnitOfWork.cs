@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QuizApp.Data.Core.Interfaces;
 using System;
 using System.Collections;
@@ -9,16 +10,16 @@ namespace QuizApp.Data.Services.Abstract
 {
 	public abstract class UnitOfWork: IUnitOfWork
 	{
-		private readonly IdentityDbContext _context = null;
+		private readonly DbContext _context = null;
 		//private readonly ILogger _log;
 		
-		public UnitOfWork(IdentityDbContext context)//, ILog log)
+		public UnitOfWork(DbContext context) //, ILog log)
 		{
 			_context = context;
 			//_log = log;
 		}
 
-		public virtual void Save()
+		public virtual bool Save()
 		{
 			try
 			{
@@ -46,6 +47,7 @@ namespace QuizApp.Data.Services.Abstract
 				//_log.Info(outputLines.ToString());
 				throw;
 			}
+			return true;
 		}
 
 		#region Implementing IDiosposable...
