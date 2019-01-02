@@ -11,10 +11,12 @@ namespace Evenflo.Demandware.DataCore.Static
 	{
 		public static D GetById(ReadOnlyRepository<S> repo, object id)
 		{
-			var item = repo.GetById(id);
-			if (item != null)
+			IQueryable<S> item = repo.GetById(id);
+			S firstItem = item.FirstOrDefault();
+			if (firstItem != null)
 			{
-				var model = Mapper.Map<S, D>(item);
+				
+				var model = Mapper.Map<S, D>(firstItem);
 				return model;
 			}
 			return null;

@@ -1,4 +1,4 @@
-﻿using QuizApp.Data.Dal.Models;
+﻿using QuizApp.Data.Entities.Models;
 using QuizApp.UnitTest.XUnitTesting.Fixture;
 using System;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			
 		}
 		[Fact]
-		public void TestCreateQuiz()
+		public async void TestCreateQuizAsync()
 		{
 			var blnSucceeded = false;
 			string strExceptionMessage = string.Empty;
@@ -33,13 +33,13 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			// Act
 			try
 			{
-				using (var uow = _fixture.CreateUnitOfWork())
+				using (var uow = _fixture.CreateUnitOfWork(false))
 				{
 					uow.QuizRepository.Create(_simpleQuiz);
-					blnSucceeded = uow.Save();
+					blnSucceeded = await uow.Save();
 
 					var quiz = uow.QuizRepository.GetById(expectedId);
-					actualId = quiz.Id;
+					actualId = quiz.FirstOrDefault().Id;
 				}
 				_fixture.Dispose();
 			}
@@ -56,7 +56,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 		}
 
 		[Fact]
-		public void TestUpdateQuiz()
+		public async void TestUpdateQuizAsync()
 		{
 			var blnSucceeded = false;
 			string strExceptionMessage = string.Empty;
@@ -71,17 +71,17 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			// Act
 			try
 			{
-				using (var uow = _fixture.CreateUnitOfWork())
+				using (var uow = _fixture.CreateUnitOfWork(false))
 				{
 					uow.QuizRepository.Create(_simpleQuiz);
-					uow.Save();
+					await uow.Save();
 
 					var quiz = uow.QuizRepository.Get(x => x.Id == expectedId).FirstOrDefault();
 					
 					quiz.Title = expectedTitle;
 					quiz.EventId = "4321";
 					uow.QuizRepository.Update(quiz);
-					blnSucceeded = uow.Save();
+					blnSucceeded = await uow.Save();
 					var updatedQuiz = uow.QuizRepository.GetFirst(x => x.Id == expectedId);
 					actualId = updatedQuiz.Id;
 					actualEventId = updatedQuiz.EventId;
@@ -105,7 +105,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 		}
 
 		[Fact]
-		public void TestDeleteQuizById()
+		public async void TestDeleteQuizByIdAsync()
 		{
 			var blnSucceeded = false;
 			string strExceptionMessage = string.Empty;
@@ -116,21 +116,21 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			// Act
 			try
 			{
-				using (var uow = _fixture.CreateUnitOfWork())
+				using (var uow = _fixture.CreateUnitOfWork(false))
 				{
 					uow.QuizRepository.Create(_simpleQuiz);
-					uow.Save();
+					await uow.Save();
 
 					var quiz = uow.QuizRepository.Get(x => x.Id == expectedId, null, "");
 					actualId = quiz.FirstOrDefault().Id;
 
 					uow.QuizRepository.Delete(actualId);
-					blnSucceeded = uow.Save();
+					blnSucceeded = await uow.Save();
 					actualDeletedRecord = uow.QuizRepository.GetFirst(x => x.Id == actualId);
 
 					// Re-create the quiz as other test quizzes are failing.
 					uow.QuizRepository.Create(_simpleQuiz);
-					uow.Save();
+					await uow.Save();
 					quiz = uow.QuizRepository.Get(x => x.Id == expectedId, null, "");
 					actualId = quiz.FirstOrDefault().Id;
 
@@ -152,7 +152,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 
 		
 		[Fact]
-		public void TestDeleteQuizByExpresion_ExpectNotImplemented()
+		public async void TestDeleteQuizByExpresion_ExpectNotImplementedAsync()
 		{
 			var blnSucceeded = false;
 			string strExceptionMessage = string.Empty;
@@ -164,16 +164,16 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			// Act
 			try
 			{
-				using (var uow = _fixture.CreateUnitOfWork())
+				using (var uow = _fixture.CreateUnitOfWork(false))
 				{
 					uow.QuizRepository.Create(_simpleQuiz);
-					uow.Save();
+					await uow.Save();
 
 					var quiz = uow.QuizRepository.Get(x => x.Id == expectedId, null, "");
 					actualId = quiz.FirstOrDefault().Id;
 
 					uow.QuizRepository.Delete(x => x.Id == actualId);
-					blnSucceeded = uow.Save();
+					blnSucceeded = await uow.Save();
 
 				}
 				_fixture.Dispose();

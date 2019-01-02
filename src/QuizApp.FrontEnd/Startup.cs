@@ -33,7 +33,7 @@ namespace QuizApp.FrontEnd
 			services.AddDbContext<DalContext>(options =>
 				options.UseSqlServer(
 					Configuration.GetConnectionString("DefaultConnection"), 
-					b => b.MigrationsAssembly("QuizApp.Dal")));
+					b => b.MigrationsAssembly("QuizApp.Data.Dal")));
 			services.AddDefaultIdentity<IdentityUser>()
 				.AddEntityFrameworkStores<DalContext>();
 			services.DataServicesStartup();

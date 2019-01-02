@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
     <AssemblyName>QuizApp.Data.Dal</AssemblyName>
     <RootNamespace>QuizApp.Data.Dal</RootNamespace>
   </PropertyGroup>
@@ -14,8 +14,10 @@
     <Compile Remove="Migrations\20181216044650_InitialCreate.cs" />
     <Compile Remove="Migrations\20181216044939_InitialCreate.cs" />
     <Compile Remove="Migrations\20181216045141_InitialCreate.cs" />
+    <Compile Remove="Migrations\20181216045607_InitialCreate.cs" />
     <Compile Remove="Migrations\20181220045721_AddQuizIdToQuestion.cs" />
     <Compile Remove="Migrations\20181220050028_AddQuizIdToQuestion.cs" />
+    <Compile Remove="Migrations\20181223020203_InitialCreate.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +40,10 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\QuizApp.Data.Entities\QuizApp.Data.Entities.csproj" />
   </ItemGroup>
 
 </Project>

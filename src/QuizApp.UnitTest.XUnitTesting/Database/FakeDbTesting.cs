@@ -31,7 +31,6 @@ namespace QuizApp.UnitTest.XUnitTesting.Database
 			string expectedEmail = "russell.griffith@gmail.com";
 			int expectedCount = 2;
 			var actualCount = 0;
-			string lookupUserName = "russdawgbass";
 
 			try
 			{
@@ -47,7 +46,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Database
 					{
 						users = uow.UserReadOnlyRepository.GetAll();
 						actualCount = users.Count();
-						IdentityUser singleUser = users.FirstOrDefault(x => x.UserName == lookupUserName);
+						IdentityUser singleUser = users.FirstOrDefault(x => x.UserName == expectedEmail);
 						if (singleUser != null)
 						{
 							nonAdminUserEmail = singleUser.Email;
@@ -70,25 +69,25 @@ namespace QuizApp.UnitTest.XUnitTesting.Database
 
 		}
 
-		[Fact]
-		public void TestInMemoryDatabase()
-		{
-			IEnumerable<IdentityUser> users = null;
-			var options = new DbContextOptionsBuilder<DalContext>()
-					.UseInMemoryDatabase("test")
-					.Options;
+		//[Fact]
+		//public void TestInMemoryDatabase()
+		//{
+		//	IEnumerable<IdentityUser> users = null;
+		//	var options = new DbContextOptionsBuilder<DalContext>()
+		//			.UseInMemoryDatabase("test")
+		//			.Options;
 
-			using (var dalContext = new DalContext(options))
-			{
-				using (var uow = new QuizAppUnitOfWork(dalContext))
-				{
-					users = uow.UserReadOnlyRepository.GetAll();
-				}
-			}
+		//	using (var dalContext = new DalContext(options))
+		//	{
+		//		using (var uow = new QuizAppUnitOfWork(dalContext))
+		//		{
+		//			users = uow.UserReadOnlyRepository.GetAll();
+		//		}
+		//	}
 
-			Assert.NotNull(users);
-			Assert.True(users.Count() == 0);
-		}
+		//	Assert.NotNull(users);
+		//	Assert.True(users.Count() == 0);
+		//}
 			
 	}
 }

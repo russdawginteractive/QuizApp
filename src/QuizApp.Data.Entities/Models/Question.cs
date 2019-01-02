@@ -1,9 +1,9 @@
-﻿using QuizApp.Data.Dal.Base;
+﻿using QuizApp.Data.Entities.Base;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuizApp.Data.Dal.Models
+namespace QuizApp.Data.Entities.Models
 {
 	public class Question: BaseModel
 	{

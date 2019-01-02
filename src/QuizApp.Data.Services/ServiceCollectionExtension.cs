@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using QuizApp.Data.Dal;
+using QuizApp.Data.Services.EdmModel;
 
 namespace QuizApp.Data.Services
 {
@@ -11,6 +12,7 @@ namespace QuizApp.Data.Services
 		{
 			services.AddScoped<IdentityDbContext<IdentityUser>, DalContext>();
 			services.AddTransient<UserManager<IdentityUser>>();
+			services.AddTransient<EdmModelBuilder>();
 			return services;
 		}
 	}

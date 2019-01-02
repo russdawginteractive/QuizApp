@@ -1,0 +1,139 @@
+﻿USE [SafetyMadeEasier]
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (1, N'Widespread 5 pt harness use began in which decade?', N'1970s', N'1980s', N'1990s', N'None of the above', N'', 3, N'', 1, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (2, N'What is one example given of something that can compromise the Car Seat System?', N'Missing Parts', N'LATCH', N'Ugly seat pad', N'Rolled towel', N'', 1, N'', 2, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (3, N'What is a witness mark?', N'Indication of crash damage at the belt path.', N'Discoloration on the shell of the car seat.', N'Indication of damage from shipping.', N'Indication of damage from ejector pins.', N'', 1, N'', 3, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (4, N'Car seats in the 60s were made mostly out of what material?', N'Fabric', N'Canvas ', N'Metal', N'Glass', N'', 3, N'', 4, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (5, N'What decade did car seats transition from mostly metal to mostly plastic?', N'50s', N'60s', N'90s', N'80s', N'', 4, N'', 5, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (6, N'What car seat colors show more stress?', N'Dark colors', N'Light colors', N'Metallic colors', N'Plaid', N'', 2, N'', 6, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (7, N'Is all stress whitening on a car seat proof of damage that will compromise its performance?', N'No', N'Yes', N'', N'', N'', 1, N'', 7, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (8, N'According to the presentation, what causes stress whitening on a car seat that is not necessarily damage that will compromise performance?', N'Ejector pin locations on the underside of the seat.', N'Stickers', N'Car Accident', N'Transportation/Shipping', N'', 1, N'', 8, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (9, N'What is the most common material used to make car seat shells?', N'Precious metals', N'Unobtainium ', N'Polypropylene', N'Titanium ', N'', 3, N'', 9, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (10, N'Which of these expanded foams are not used in car seats?', N'Expanded Polyethylene (EPE)', N'Expanded Polypropylene (EPP)', N'Expanded Polystyrene (EPS)', N'Expanded Butadiene-styrene (EBS)', N'', 4, N'', 10, 1, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (11, N'When does Evenflo prohibit a car seat installation from having any overhang?', N'For any rear-facing only car seat.', N'For any rear-facing convertible car seat.', N'For the SureRide/Titan 65, Titan 50 and Tribute in rear-facing position.', N'Overhang is never permitted for any Evenflo car seat installation.', N'', 3, NULL, 1, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (12, N'The crotch buckle can be shortened on any Evenflo car seat.', N'True', N'False', N'', N'', N'', 2, NULL, 2, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (13, N'Locking clips are no longer provided on any Evenflo car seats.', N'True', N'False', N'', N'', N'', 2, NULL, 3, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (14, N'SensorSafe Technology will alert a driver if a child unbuckles the chest clip while the vehicle is in motion.', N'True', N'False', N'', N'', N'', 1, NULL, 4, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (15, N'The SensorSafe Receiver plug installs in the following location in model year 2008 or newer vehicles:', N'16 PIN OBD II Port', N'USB Port', N'AC Power Outlet', N'None of the above', N'', 1, NULL, 5, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (16, N'SensorSafe Technology is available:', N'For use with any Evenflo rear-facing only car seat.', N'Only for use with Evenflo Embrace Infant Car Seats with a weight rating of 30 lbs or greater.', N'As an after-market product available for use with any rear-facing only car seat.', N'None of the above', N'', 2, NULL, 6, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (17, N'The base of the Platinum LiteMax rear-facing only car seat includes which of the following features:', N'Belt tensioner/lock-off', N'4 position recline adjustment', N'SureSafe Installation', N'All of the above', N'', 4, NULL, 7, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (18, N'The recline feature of Evenflo Transitions/Evolve can only be used in harness mode.', N'True', N'False', N'', N'', N'', 1, NULL, 8, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (19, N'Evenflo booster seats and combination seats used in booster mode have no age limit requirement.', N'True', N'False', N'', N'', N'', 2, NULL, 9, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (20, N'The most appropriate place to contact the manufacturer when you have a question is:', N'Social Media', N'Customer Service', N'Company CPS Advocate', N'Both B and C', N'', 4, NULL, 10, 4, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (21, N'Goodbaby International car seat brands include CYBEX, Evenflo, GB and Urbini.', N'True', N'False', N'', N'', N'', 1, NULL, 1, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (22, N'The FAQ section of each brand''s consumer website may feature guidance on situations that are not covered in product instructions.', N'True', N'False', N'', N'', N'', 1, NULL, 2, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (23, N'All Goodbaby International car seats and booster seats follow the 80/20 guidance from the CPST Curriculum.', N'True', N'False', N'', N'', N'', 2, NULL, 3, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (24, N'The crotch buckle can be shortened to improve fit for small infants on the following car seats:', N'Any Evenflo car seat', N'All GB, CYBEX, Evenflo and Urbini infant car seats', N'Evenflo Embrace, Evenflo SureRide/Titan 65 and Urbini Sonti', N'Not available on any CYBEX, GB, Evenflo or Urbini car seats', N'', 3, NULL, 4, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (25, N'Lower anchor borrowing to install a car seat in the center seating position is allowed for all Goodbaby International car seat brands.', N'True', N'False', N'', N'', N'', 1, NULL, 5, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (26, N'A pool noodle or rolled towel may be used to improve the recline of a rear-facing installation.', N'True', N'False', N'', N'', N'', 1, NULL, 6, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (27, N'Which of the following statements <strong><u>DOES NOT APPLY</u></strong> to the Evenflo rollover test:', N'The rollover test simulates a dynamic rollover roof impact.', N'Two seats are tested at the same time.', N'The test is the same as the inversion test for aircraft certification.', N'The test is conducted on an actual vehicle seat.', N'', 3, NULL, 7, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (28, N'A load leg, like on the GB Asana DLX or CYBEX Aton 2, Aton Q or Cloud Q helps limit the car seat''s forward rotation in a frontal crash.', N'True', N'False', N'', N'', N'', 1, NULL, 8, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (29, N'For installation in a vehicle, the CYBEX Cloud Q requires the handle in the following position:', N'Carry', N'Drive (forward/anti-rebound) for both carrier and base installations', N'Any locked position', N'Drive (forward/anti-rebound) for carrier install, any position for base', N'', 2, NULL, 9, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (30, N'The full recline feature on the Cloud Q can only be used outside the vehicle.', N'True', N'False', N'', N'', N'', 1, NULL, 10, 5, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (31, N'The Evenflo rollover test is a dynamic crash test simulating roof-to-ground contact.', N'True', N'False', N'', N'', N'', 1, NULL, 1, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (32, N'<strong>Evenflo SensorSafe</strong> Technology provides these <strong><u>two</u></strong> functions:', N'A. Alerts caregiver that child is in vehicle upon arrival at destination.', N'B. Alerts caregiver when child falls asleep.', N'C. Alerts caregiver if chest clip is unbuckled during transit.', N'A and B', N'A and C', 5, NULL, 2, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (33, N'All Evenflo convertible and combination seats are incorporating a two year age minimum for forward-facing use.', N'True', N'False', N'', N'', N'', 1, NULL, 3, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (34, N'How old does Evenflo require a child to be before using a booster seat (or a combination seat in booster mode)?', N'3 years old', N'4 years old', N'5 years old', N'There is no stated age minimum.', N'', 2, NULL, 4, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (35, N'What part of the seat belt and which side of the car seat are utilized for the lock-off on the CYBEX Sirona M convertible car seat?', N'The shoulder belt on the retractor side.', N'The shoulder belt on the buckle side.', N'The lap belt on the retractor side.', N'The lap belt routes through both lock-offs (one on each side).', N'', 1, NULL, 5, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (36, N'The GB Idan rear-facing only car seat incorporates a base with a load leg, which provides the following benefit(s):', N'Limits the car seat’s forward rotation in a frontal crash.', N'Provides an additional point of contact for added stability in the installation.', N'Helps to spread out crash forces.', N'All of the above.', N'', 4, NULL, 6, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (37, N'The European belt route on the GB Idan is for use when the car seat is installed without the base.', N'True', N'False', N'', N'', N'', 1, NULL, 7, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (38, N'For all Goodbaby International car seat brands, installation in the center seating position using the inner lower anchor bars of outboard seating positions is allowed, if the following conditions are met:', N'A. The vehicle manufacturer also permits.', N'B. The bars are spaced 11 – 20 inches apart.', N'C. The bars are spaced more than 11 inches apart.', N'A and B', N'A and C', 4, NULL, 8, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (39, N'For all Goodbaby International car seat brands, a pool noodle or rolled towel may be used to improve the recline of a rear-facing installation.', N'True', N'False', N'', N'', N'', 1, NULL, 9, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (40, N'For all Goodbaby International car seat brands, inflatable seat belts are allowed when child restraints are used as a belt positioning booster.', N'True', N'False', N'', N'', N'', 2, NULL, 10, 6, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (41, N'How old does a child need to be to use an Evenflo car seat in forward-facing mode?', N'At least 1 year old', N'At least 2 years old', N'At least 3 years old', N'No age limit specified', N'', 2, NULL, 1, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (42, N'Evenflo accessories are NOT approved for use with Evenflo car seats.', N'True', N'False', N'', N'', N'', 2, NULL, 2, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (43, N'The 1.5" rule applies to the following:', N'Any Evenflo rear-facing car seat.', N'Any Evenflo rear-facing car seat installed directly behind a front vehicle seat.', N'Any Evenflo rear-facing only (infant) car seat installed directly behind a front vehicle seat.', N'Any Evenflo rear-facing only (infant) car seat installed in the center of the back seat.', N'', 3, NULL, 3, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (44, N'Evenflo rear-facing only (infant) car seats allow the carry handle to be in any position during vehicle travel.', N'True', N'False', N'', N'', N'', 2, NULL, 4, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (45, N'All Evenflo car seats follow the 80/20 guidance from the CPST curriculum to determine appropriate overhang from a vehicle seat.', N'True', N'False', N'', N'', N'', 2, NULL, 5, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (46, N'The recline foot of the SureRide/Titan 65 convertible car seat does not need to be in contact with the vehicle seat when it is installed, if the installation is correct and tight.', N'True', N'False', N'', N'', N'', 1, NULL, 6, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (47, N'How old does a child need to be to use an Evenflo booster seat – or a car seat in booster mode?', N'At least 3 years old', N'At least 4 years old', N'No age limit specified', N'', N'', 2, NULL, 7, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (48, N'If an Evenflo car seat is not sold with harness covers they may not be added to the seat.', N'True', N'False', N'', N'', N'', 2, NULL, 8, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (49, N'Evenflo does not allow pool noodles, only rolled towels are acceptable to help achieve a rear-facing recline angle.', N'True', N'False', N'', N'', N'', 2, NULL, 9, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (50, N'Inflatable seat belts are allowed when Evenflo child restraints are used as a belt positioning booster.', N'True', N'False', N'', N'', N'', 1, NULL, 10, 7, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (51, N'All Evenflo convertible, combination and all-in-one car seats have incorporated a two year age minimum for forward-facing use.', N'True', N'False', N'', N'', N'', 1, NULL, 1, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (52, N'How old does Evenflo require a child to be before using a booster seat (or a combination or all-in-one seat in booster mode)?', N'At least 3 years old', N'At least 4 years old', N'At least 5 years old', N'There is no stated age minimum.', N'', 2, NULL, 2, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (53, N'The arm rests of the Evenflo Spectrum booster seat are positioned to:', N'Prevent misuse in routing of the seat belt.', N'Provide more ergonomic positioning for the child.', N'Improve occupant positioning in side impact crash.', N'All of the above.', N'', 4, NULL, 3, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (54, N'The Evenflo LiteMax handle position is allowed in which position(s) in the US?', N'Position 1 only (upright/carry)', N'Position 2 only (convenience)', N'Position 3 only (travel – behind child''s head)', N'Position 4 only (stand)', N'Positions 1 and 3', 5, NULL, 4, 8, N'Positions 2 and 4')
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (55, N'Evenflo is making this update to draw attention to the tether on the child restraint:', N'Making the plastic housing of the tether connector red.', N'Making the plastic housing of the tether connector purple.', N'Making the plastic housing of the tether connector yellow.', N'None of the above.', N'', 1, NULL, 5, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (56, N'The new Evenflo accessory line is approved for use with any car seat.', N'True', N'False', N'', N'', N'', 2, NULL, 6, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (57, N'The new CYBEX Sirona M convertible car seat requires a Bluetooth compatible vehicle or cell phone.', N'True', N'False', N'', N'', N'', 2, NULL, 7, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (58, N'The SensorSafe Technology incorporated onto the CYBEX Sirona M convertible car seat provides the following:', N'Reminds caregiver that child is present in vehicle when ignition is turned off.', N'Alerts caregiver if chest clip is unbuckled while the vehicle is in motion.', N'Alerts caregiver if vehicle temperature gets too hot or cold.', N'Reminds caregivers to take a stretch break periodically during long trips.', N'Provides access to manuals, FAQs and customer service.', 6, NULL, 8, 8, N'All of the above.')
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (59, N'Load legs, as found on many GB and CYBEX rear-facing only car seats, help to limit forward rotation in a frontal crash.', N'True', N'False', N'', N'', N'', 1, NULL, 9, 8, NULL)
+GO
+INSERT [dbo].[Questions] ([QuestionID], [Title], [Answer1], [Answer2], [Answer3], [Answer4], [Answer5], [CorrectAnswer], [AnswerExplanation], [QuestionOrder], [QuizID], [Answer6]) VALUES (60, N'For all Goodbaby International car seat brands, inflatable seat belts are allowed when child restraints are used as a belt positioning booster.', N'True', N'False', N'', N'', N'', 2, NULL, 10, 8, NULL)
+GO
+SET IDENTITY_INSERT [dbo].[TestDetails] ON 
+
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (1, N'Child Restraint Manufacturing & Materials', N'CEU Test for Certification', N'https://www.youtube.com/watch?v=zbyFRaIJTh4', N'6151', 0)
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (4, N'Evenflo Product Update – Summer 2015', N'Featured Products: Evenflo Embrace infant car seat with SensorSafe Technology, Evenflo LiteMax 35 infant car seat, Evenflo Transitions/Evolve combination seats, Evenflo RigthFit booster seat, Evenflo Momentum convertible seat', N'https://www.youtube.com/watch?v=IKm2KvIGfLg', N'6475', 1)
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (5, N'Goodbaby International Product Update – Summer 2016', N'Featured Products: Evenflo SafeMax All-in-One and Combination seats, Evenflo LiteMax infant seat, Evenflo SensorSafe Technology, GB Asana 35 DLX, Urbini Sonti, CYBEX Cloud Q', N'https://www.youtube.com/watch?v=Xf0kRkBCuy4', N'6478', 1)
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (6, N'Goodbaby International Product Update – Spring 2017', N'Featured Products: Evenflo Spectrum booster seat, Evenflo Sonus convertible seat, Evenflo Sonus 65 convertible seat, Evenflo Stratos convertible seat, CYBEX Sirona M convertible seat, GB Idan infant seat', N'https://www.youtube.com/watch?v=nGJwmrcsG-E', N'6476', 1)
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (7, N'Evenflo – Institutional Product Update', N'Featured Products: Full Evenflo institutional car seat line', N'https://youtu.be/ttjkC-tqKZ4', N'6477', 1)
+GO
+INSERT [dbo].[TestDetails] ([QuizID], [Title], [Description], [PathtoTestReference], [EventId], [Active]) VALUES (8, N'Goodbaby International Product Update – Spring 2018', N'Featured Products: Evenflo Spectrum booster seat, Evenflo LiteMax infant seat updates, Evenflo Maestro Sport combination seat, Evenflo Red Tether initiative, Evenflo car seat accessories, CYBEX Sirona M with SensorSafe Technology convertible seat, preview CYBEX Aton M infant seat, Urbini Presti convertible seat, Urbini Asenti all-in-one seat', N'https://www.youtube.com/watch?v=fS-X8iCRA-s&feature=youtu.be', N'6423', 1)
+GO
+SET IDENTITY_INSERT [dbo].[TestDetails] OFF
+GO

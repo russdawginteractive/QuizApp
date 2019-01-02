@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QuizApp.Data.Core.Common;
-using QuizApp.Data.Dal.Models;
+using QuizApp.Data.Entities.Models;
 
 namespace QuizApp.Data.Services.UnitOfWork
 {

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace QuizApp.Data.Dal.Base
+namespace QuizApp.Data.Entities.Base
 {
 	public class BaseModel
 	{

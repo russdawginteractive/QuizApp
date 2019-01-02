@@ -20,14 +20,14 @@ namespace QuizApp.Data.Core.Common
 			_dbSet = context.Set<T>();
 		}
 
-		public virtual IEnumerable<T> Get(Expression<Func<T, bool>> filter)
+		public virtual IQueryable<T> Get(Expression<Func<T, bool>> filter)
 		{
 			IQueryable<T> query = _dbSet;
 			query = query.Where(filter);
-			return query.ToList();
+			return query;
 		}
 
-		public virtual IEnumerable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
+		public virtual IQueryable<T> Get(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = "")
 		{
 			IQueryable<T> query = _dbSet;
 
@@ -43,25 +43,32 @@ namespace QuizApp.Data.Core.Common
 
 			if (orderBy != null)
 			{
-				return orderBy(query).ToList();
+				return orderBy(query);
 			}
 			else
 			{
-				return query.ToList();
+				return query;
 			}
 		}
 
-		public virtual IEnumerable<T> GetAll()
+		public virtual IQueryable<T> GetAll()
 		{
-			return _dbSet.ToList();
+			return _dbSet;
 		}
-		public virtual T GetFirst(Expression<Func<T, bool>> filter)
+		public virtual IQueryable<T> GetFirstQueryable(Expression<Func<T, bool>> filter)
 		{
-			return Get(filter).FirstOrDefault();
+			return Get(filter);
 		}
-		public virtual T GetById(object id)
+		public T GetFirst(Expression<Func<T, bool>> filter)
 		{
-			return _dbSet.Find(id);
+			IQueryable<T> query = _dbSet;
+			return query.FirstOrDefault(filter);
+		}
+		public virtual IQueryable<T> GetById(object id)
+		{
+			T result = _dbSet.Find(id);
+			IQueryable<T> list = new List<T>{result}.AsQueryable();
+			return list;
 		}
 
 		public virtual IQueryable<T> GetDataBySqlCommand(string sql, params object[] parameters)

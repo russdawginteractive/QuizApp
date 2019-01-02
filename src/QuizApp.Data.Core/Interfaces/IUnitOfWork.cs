@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace QuizApp.Data.Core.Interfaces
 {
@@ -7,6 +8,7 @@ namespace QuizApp.Data.Core.Interfaces
 		/// <summary>
 		/// Save method.
 		/// </summary>
-		bool Save();
+		Task<bool> Save();
+
 	}
 }

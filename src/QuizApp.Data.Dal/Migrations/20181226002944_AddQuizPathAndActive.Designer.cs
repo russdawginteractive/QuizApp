@@ -10,14 +10,14 @@ using QuizApp.Data.Dal;
 namespace QuizApp.Data.Dal.Migrations
 {
     [DbContext(typeof(DalContext))]
-    [Migration("20181216045607_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20181226002944_AddQuizPathAndActive")]
+    partial class AddQuizPathAndActive
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.4-rtm-31024")
+                .HasAnnotation("ProductVersion", "2.2.0-rtm-35687")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -45,9 +45,20 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetRoles");
 
                     b.HasData(
-                        new { Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765", ConcurrencyStamp = "3270f485-7002-452f-8ff2-fc53b25f0dd2", Name = "Admin", NormalizedName = "Admin" },
-                        new { Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744", ConcurrencyStamp = "ee369edc-638b-429b-9e81-ebb18f0a979a", Name = "QuizUser", NormalizedName = "Quiz User" }
-                    );
+                        new
+                        {
+                            Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765",
+                            ConcurrencyStamp = "022f9848-0088-40e6-ad63-fc7c548a2e8a",
+                            Name = "Admin",
+                            NormalizedName = "Admin"
+                        },
+                        new
+                        {
+                            Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744",
+                            ConcurrencyStamp = "3afa03dd-0671-4ab1-91fb-9d293b3bc104",
+                            Name = "QuizUser",
+                            NormalizedName = "Quiz User"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -121,9 +132,38 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetUsers");
 
                     b.HasData(
-                        new { Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", AccessFailedCount = 0, ConcurrencyStamp = "9e039fd2-d18e-43c8-b0bf-531e00040443", Email = "russell.griffith+quizapp+admin@gmail.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "russell.griffith+quizapp+admin@gmail.com", NormalizedUserName = "Admin", PasswordHash = "AQAAAAEAACcQAAAAEHrxSiunuYkoJdPo5HdrZu3k9efC9mlHBsxmWTh5RJDavTDDYurW6SpTKjtxg2MApQ==", PhoneNumberConfirmed = false, SecurityStamp = "", TwoFactorEnabled = false, UserName = "admin" },
-                        new { Id = "009dc675-6328-4f92-b206-b3311908e306", AccessFailedCount = 0, ConcurrencyStamp = "5024a0ba-7013-4e3c-86a6-77ddf0e88408", Email = "russell.griffith@gmail.com", EmailConfirmed = true, LockoutEnabled = false, NormalizedEmail = "russell.griffith@gmail.com", NormalizedUserName = "Russ Dawg Bass", PasswordHash = "AQAAAAEAACcQAAAAEETmB6SbEaGfXSXvp9xS9n174W6geiwS3RoMD2akTdP63IeX8nRIxoaTr1HVOLvsgA==", PhoneNumberConfirmed = false, SecurityStamp = "", TwoFactorEnabled = false, UserName = "russdawgbass" }
-                    );
+                        new
+                        {
+                            Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "99d7b7dc-c212-477c-84f7-5a57fa2d0efd",
+                            Email = "russell.griffith+quizapp+admin@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
+                            NormalizedUserName = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH3KZnjY9JQFkDP7cULL9h/U2cFDqHwpvqOnec0UUZVeOsocx2y8vlbwzjl20dN+7g==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "russell.griffith+quizapp+admin@gmail.com"
+                        },
+                        new
+                        {
+                            Id = "009dc675-6328-4f92-b206-b3311908e306",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "fdc23e0b-2eb6-4d6a-9e64-dc417517d973",
+                            Email = "russell.griffith@gmail.com",
+                            EmailConfirmed = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "RUSSELL.GRIFFITH@GMAIL.COM",
+                            NormalizedUserName = "RUSSELL.GRIFFITH@GMAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEB6MOFv//EXBF8klgcSPyAvR5K9zbBer1t+WmorvqTnIDpVPGUdN6kG7oDfDGiHzIA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "russell.griffith@gmail.com"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -177,9 +217,16 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetUserRoles");
 
                     b.HasData(
-                        new { UserId = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", RoleId = "b0dabe9b-f8b7-48f4-b74a-6a6671130765" },
-                        new { UserId = "009dc675-6328-4f92-b206-b3311908e306", RoleId = "402b9b75-2f6d-4f40-8d59-26ef95c51744" }
-                    );
+                        new
+                        {
+                            UserId = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
+                            RoleId = "b0dabe9b-f8b7-48f4-b74a-6a6671130765"
+                        },
+                        new
+                        {
+                            UserId = "009dc675-6328-4f92-b206-b3311908e306",
+                            RoleId = "402b9b75-2f6d-4f40-8d59-26ef95c51744"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -197,7 +244,7 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.Answer", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.Answer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -220,7 +267,7 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("Answers");
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.Question", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.Question", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -246,11 +293,13 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("Questions");
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.Quiz", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.Quiz", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Active");
 
                     b.Property<DateTime>("Created");
 
@@ -262,6 +311,8 @@ namespace QuizApp.Data.Dal.Migrations
 
                     b.Property<DateTime>("Modified");
 
+                    b.Property<string>("PathToQuizReference");
+
                     b.Property<string>("Title")
                         .IsRequired();
 
@@ -270,7 +321,7 @@ namespace QuizApp.Data.Dal.Migrations
                     b.ToTable("Quiz");
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.QuizResult", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.QuizResult", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -338,26 +389,26 @@ namespace QuizApp.Data.Dal.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.Answer", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.Answer", b =>
                 {
-                    b.HasOne("QuizApp.Data.Dal.Models.Question", "Question")
+                    b.HasOne("QuizApp.Data.Entities.Models.Question", "Question")
                         .WithMany("Answers")
                         .HasForeignKey("QuestionId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.Question", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.Question", b =>
                 {
-                    b.HasOne("QuizApp.Data.Dal.Models.Answer", "CorrectAnswer")
+                    b.HasOne("QuizApp.Data.Entities.Models.Answer", "CorrectAnswer")
                         .WithMany()
                         .HasForeignKey("CorrectAnswerId");
 
-                    b.HasOne("QuizApp.Data.Dal.Models.Quiz")
+                    b.HasOne("QuizApp.Data.Entities.Models.Quiz", "Quiz")
                         .WithMany("Questions")
                         .HasForeignKey("QuizId");
                 });
 
-            modelBuilder.Entity("QuizApp.Data.Dal.Models.QuizResult", b =>
+            modelBuilder.Entity("QuizApp.Data.Entities.Models.QuizResult", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()

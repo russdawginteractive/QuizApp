@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
-using QuizApp.Data.Dal.Base;
-using System;
-using System.Collections.Generic;
+using QuizApp.Data.Entities.Base;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
-namespace QuizApp.Data.Dal.Models
+namespace QuizApp.Data.Entities.Models
 {
 	public class QuizResult : BaseModel
 	{

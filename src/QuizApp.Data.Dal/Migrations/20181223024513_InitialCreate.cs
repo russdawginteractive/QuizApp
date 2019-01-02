@@ -202,8 +202,8 @@ namespace QuizApp.Data.Dal.Migrations
                     Created = table.Column<DateTime>(nullable: false),
                     Modified = table.Column<DateTime>(nullable: false),
                     Title = table.Column<string>(nullable: false),
-                    CorrectAnswerId = table.Column<int>(nullable: true),
-                    QuizId = table.Column<int>(nullable: true)
+                    QuizId = table.Column<int>(nullable: true),
+                    CorrectAnswerId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -244,8 +244,8 @@ namespace QuizApp.Data.Dal.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "b0dabe9b-f8b7-48f4-b74a-6a6671130765", "3270f485-7002-452f-8ff2-fc53b25f0dd2", "Admin", "Admin" },
-                    { "402b9b75-2f6d-4f40-8d59-26ef95c51744", "ee369edc-638b-429b-9e81-ebb18f0a979a", "QuizUser", "Quiz User" }
+                    { "b0dabe9b-f8b7-48f4-b74a-6a6671130765", "02c49f2d-9f52-4aec-acc5-9bbf810ea581", "Admin", "Admin" },
+                    { "402b9b75-2f6d-4f40-8d59-26ef95c51744", "3d5ffb6e-cd35-419f-8395-a7337ea4a0d2", "QuizUser", "Quiz User" }
                 });
 
             migrationBuilder.InsertData(
@@ -253,8 +253,8 @@ namespace QuizApp.Data.Dal.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
                 values: new object[,]
                 {
-                    { "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", 0, "9e039fd2-d18e-43c8-b0bf-531e00040443", "russell.griffith+quizapp+admin@gmail.com", true, false, null, "russell.griffith+quizapp+admin@gmail.com", "Admin", "AQAAAAEAACcQAAAAEHrxSiunuYkoJdPo5HdrZu3k9efC9mlHBsxmWTh5RJDavTDDYurW6SpTKjtxg2MApQ==", null, false, "", false, "admin" },
-                    { "009dc675-6328-4f92-b206-b3311908e306", 0, "5024a0ba-7013-4e3c-86a6-77ddf0e88408", "russell.griffith@gmail.com", true, false, null, "russell.griffith@gmail.com", "Russ Dawg Bass", "AQAAAAEAACcQAAAAEETmB6SbEaGfXSXvp9xS9n174W6geiwS3RoMD2akTdP63IeX8nRIxoaTr1HVOLvsgA==", null, false, "", false, "russdawgbass" }
+                    { "c5713835-f70b-4fbb-ab7e-6e6320bb59ee", 0, "463cd7b5-aba5-4769-a543-10285944ee5b", "russell.griffith+quizapp+admin@gmail.com", true, false, null, "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM", "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM", "AQAAAAEAACcQAAAAENQiEqpQ577mJUuAWyn9a46O8aqJpx9pOJ9RJzHeIl5LF/Frt7h1N3e+Ep5SOJ3OAA==", null, false, "", false, "russell.griffith+quizapp+admin@gmail.com" },
+                    { "009dc675-6328-4f92-b206-b3311908e306", 0, "ecaffbce-be75-40a9-83cc-3e261b758bbf", "russell.griffith@gmail.com", true, false, null, "RUSSELL.GRIFFITH@GMAIL.COM", "RUSSELL.GRIFFITH@GMAIL.COM", "AQAAAAEAACcQAAAAEMJV/zX/jcBXZy92JW1e6OFmBf6WxmZ9sEi1WyUM+C/cMkTAnr9BwfVG3FIiEAgWwg==", null, false, "", false, "russell.griffith@gmail.com" }
                 });
 
             migrationBuilder.InsertData(

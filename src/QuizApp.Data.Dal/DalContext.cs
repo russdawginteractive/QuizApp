@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using QuizApp.Data.Dal.Base;
-using QuizApp.Data.Dal.Models;
-using QuizApp.Data.Dal.Static;
+using QuizApp.Data.Entities.Base;
+using QuizApp.Data.Entities.Models;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -66,10 +65,10 @@ namespace QuizApp.Data.Dal
 			modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser
 			{
 				Id = ADMIN_ID,
-				UserName = "admin",
-				NormalizedUserName = "Admin",
+				UserName = "russell.griffith+quizapp+admin@gmail.com",
+				NormalizedUserName = "russell.griffith+quizapp+admin@gmail.com".ToUpper(),
 				Email = "russell.griffith+quizapp+admin@gmail.com",
-				NormalizedEmail = "russell.griffith+quizapp+admin@gmail.com",
+				NormalizedEmail = "russell.griffith+quizapp+admin@gmail.com".ToUpper(),
 				EmailConfirmed = true,
 				PasswordHash = hasher.HashPassword(null, "sys_admin"),
 				SecurityStamp = string.Empty
@@ -78,10 +77,10 @@ namespace QuizApp.Data.Dal
 			modelBuilder.Entity<IdentityUser>().HasData(new IdentityUser
 			{
 				Id = USER_ID,
-				UserName = "russdawgbass",
-				NormalizedUserName = "Russ Dawg Bass",
+				UserName = "russell.griffith@gmail.com",
+				NormalizedUserName = "russell.griffith@gmail.com".ToUpper(),
 				Email = "russell.griffith@gmail.com",
-				NormalizedEmail = "russell.griffith@gmail.com",
+				NormalizedEmail = "russell.griffith@gmail.com".ToUpper(),
 				EmailConfirmed = true,
 				PasswordHash = hasher.HashPassword(null, "logcabin"),
 				SecurityStamp = string.Empty

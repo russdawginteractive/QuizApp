@@ -1,8 +1,9 @@
-﻿using QuizApp.Data.Dal.Base;
+﻿using QuizApp.Data.Entities.Base;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace QuizApp.Data.Dal.Models
+namespace QuizApp.Data.Entities.Models
 {
 	public class Quiz: BaseModel
 	{
@@ -12,6 +13,9 @@ namespace QuizApp.Data.Dal.Models
 		public string Description { get; set; }
 		[StringLength(10)]
 		public string EventId { get; set; }
+		public string PathToQuizReference { get; set; }
+		[DefaultValue(false)]
+		public bool Active { get; set; }
 		public ICollection<Question> Questions { get; set; }
 	}
 }

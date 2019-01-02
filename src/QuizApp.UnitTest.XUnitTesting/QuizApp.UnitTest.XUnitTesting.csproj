@@ -8,6 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.0" />
@@ -21,7 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\QuizApp.Api\QuizApp.Api.csproj" />
     <ProjectReference Include="..\QuizApp.Data.Dal\QuizApp.Data.Dal.csproj" />
+    <ProjectReference Include="..\QuizApp.Data.Entities\QuizApp.Data.Entities.csproj" />
     <ProjectReference Include="..\QuizApp.Data.Services\QuizApp.Data.Services.csproj" />
   </ItemGroup>
 

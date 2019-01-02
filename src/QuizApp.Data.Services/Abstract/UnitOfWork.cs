@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace QuizApp.Data.Services.Abstract
 {
@@ -19,11 +20,11 @@ namespace QuizApp.Data.Services.Abstract
 			//_log = log;
 		}
 
-		public virtual bool Save()
+		public virtual async Task<bool> Save()
 		{
 			try
 			{
-				_context.SaveChanges();
+				await _context.SaveChangesAsync();
 			}
 			catch (ValidationException e)
 			{

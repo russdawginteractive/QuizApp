@@ -1,7 +1,7 @@
-﻿using QuizApp.Data.Dal.Base;
+﻿using QuizApp.Data.Entities.Base;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace QuizApp.Data.Dal.Models
+namespace QuizApp.Data.Entities.Models
 {
 	public class Answer : BaseModel
 	{

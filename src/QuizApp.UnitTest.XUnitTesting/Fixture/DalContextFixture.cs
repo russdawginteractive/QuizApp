@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using QuizApp.Data.Dal;
 using QuizApp.Data.Services.UnitOfWork;
+using QuizApp.UnitTest.XUnitTesting.Static;
 using System;
 
 namespace QuizApp.UnitTest.XUnitTesting.Fixture
@@ -19,10 +20,15 @@ namespace QuizApp.UnitTest.XUnitTesting.Fixture
 			_quizAppUnitOfWork = null;
 		}
 
-		public QuizAppUnitOfWork CreateUnitOfWork()
+		public QuizAppUnitOfWork CreateUnitOfWork(bool setSeed = true)
 		{
 			var context = CreateContext();
 			_quizAppUnitOfWork = new QuizAppUnitOfWork(context);
+			if (setSeed)
+			{
+				SeedHelper.SeedQuestionsAndAnswers(_quizAppUnitOfWork);
+			}
+			
 			return _quizAppUnitOfWork;
 		}
 

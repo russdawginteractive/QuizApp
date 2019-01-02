@@ -1,12 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\QuizApp.Data.Core\QuizApp.Data.Core.csproj" />
     <ProjectReference Include="..\QuizApp.Data.Dal\QuizApp.Data.Dal.csproj" />
+    <ProjectReference Include="..\QuizApp.Data.Entities\QuizApp.Data.Entities.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.1.0" />
   </ItemGroup>
 
 </Project>
