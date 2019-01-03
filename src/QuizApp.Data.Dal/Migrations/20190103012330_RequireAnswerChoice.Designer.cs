@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizApp.Data.Dal;
 
 namespace QuizApp.Data.Dal.Migrations
 {
     [DbContext(typeof(DalContext))]
-    partial class DalContextModelSnapshot : ModelSnapshot
+    [Migration("20190103012330_RequireAnswerChoice")]
+    partial class RequireAnswerChoice
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,14 +48,14 @@ namespace QuizApp.Data.Dal.Migrations
                         new
                         {
                             Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765",
-                            ConcurrencyStamp = "0605d53d-441d-456d-88d0-757a6a7427ab",
+                            ConcurrencyStamp = "b6c78664-a268-46f7-90d7-d5f818a8d0c2",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744",
-                            ConcurrencyStamp = "4925ef11-daeb-488a-b52a-e7156506a6cf",
+                            ConcurrencyStamp = "181472d2-0206-444c-8f46-bccb52e32d7f",
                             Name = "QuizUser",
                             NormalizedName = "Quiz User"
                         });
@@ -134,13 +136,13 @@ namespace QuizApp.Data.Dal.Migrations
                         {
                             Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d08eebb7-eb14-43c2-b5fa-6a830a1a239d",
+                            ConcurrencyStamp = "ab6fc3d2-3fad-41fb-8dcf-d4c50986e84c",
                             Email = "russell.griffith+quizapp+admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
                             NormalizedUserName = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDm9Tb+BtBxFjAxyqa4saT1YmHPlVOPs3Lhqdc4mhr+ueR5u3ry8Soard1R5vV9zRg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELsF4mjvwCj5ioDtDApARojiLbsIrRt1bdiiOuo0/Z2LKoqQsmlS4SrtQR+Yc243SQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -150,13 +152,13 @@ namespace QuizApp.Data.Dal.Migrations
                         {
                             Id = "009dc675-6328-4f92-b206-b3311908e306",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb73e6f2-af0c-4a33-8cf8-b13a418b3f31",
+                            ConcurrencyStamp = "2480f79e-0409-4335-8a7e-79305585af3e",
                             Email = "russell.griffith@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "RUSSELL.GRIFFITH@GMAIL.COM",
                             NormalizedUserName = "RUSSELL.GRIFFITH@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDnC1Amp8ycZ5lgd4GtZL1VgoSbZXiQz3QCq8QK4f677ebCaSv1SOw9I/MX5Ig8ssg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECe+snrGN3ZjVNllOi2VxQauE7dlvIr4xCa+34tVYPGQ+At5gp7Rko2WFRzfhJj5/g==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -261,8 +263,6 @@ namespace QuizApp.Data.Dal.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Choice");
-
                     b.HasIndex("QuestionId");
 
                     b.ToTable("Answers");
@@ -291,8 +291,6 @@ namespace QuizApp.Data.Dal.Migrations
 
                     b.HasIndex("QuizId");
 
-                    b.HasIndex("Title");
-
                     b.ToTable("Questions");
                 });
 
@@ -320,10 +318,6 @@ namespace QuizApp.Data.Dal.Migrations
                         .IsRequired();
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EventId");
-
-                    b.HasIndex("Title");
 
                     b.ToTable("Quiz");
                 });

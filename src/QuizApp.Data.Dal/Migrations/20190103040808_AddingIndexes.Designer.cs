@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizApp.Data.Dal;
 
 namespace QuizApp.Data.Dal.Migrations
 {
     [DbContext(typeof(DalContext))]
-    partial class DalContextModelSnapshot : ModelSnapshot
+    [Migration("20190103040808_AddingIndexes")]
+    partial class AddingIndexes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -41,6 +41,16 @@ namespace QuizApp.Data.Services.Abstract
 				//_log.Info(outputLines.ToString());
 				throw;
 			}
+			catch (DbUpdateException updEx)
+			{
+				StringBuilder outputLines = new StringBuilder();
+				outputLines.AppendFormat("Database Update Error: {0}", updEx.Message);
+				if (updEx.InnerException != null)
+				{
+					outputLines.AppendFormat("Inner Exception: {0}", updEx.InnerException.Message);
+				}
+				throw;
+			}
 			catch (Exception ex)
 			{
 				StringBuilder outputLines = new StringBuilder();

@@ -10,6 +10,9 @@ namespace QuizApp.Data.Entities.Models
 
 		[Required]
 		public string Title { get; set; }
+		[Required]
+		public int QuizId { get; set; }
+		[ForeignKey("QuizId")]
 		public Quiz Quiz { get; set; }
 		public int? CorrectAnswerId { get; set; }
 		[ForeignKey("CorrectAnswerId")]

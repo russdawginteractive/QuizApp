@@ -8,9 +8,9 @@ using Xunit;
 
 namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 {
-	public class QuestionApiGetTests : ODataGetTests<Question>
+	public class QuestionGetTests : ODataGetTests<Question>
 	{
-		public QuestionApiGetTests(DalContextFixture fixture):base(fixture)
+		public QuestionGetTests(DalContextFixture fixture):base(fixture)
 		{
 			ODataController = new QuestionController(ODataTestUnitOfWork);
 		}

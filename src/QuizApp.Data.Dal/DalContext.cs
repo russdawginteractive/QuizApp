@@ -20,8 +20,15 @@ namespace QuizApp.Data.Dal
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
 			//modelBuilder.HasDefaultSchema(schema: DbGlobals.SchemaName);
+			modelBuilder.Entity<Quiz>().HasIndex(x => x.Title);
+			modelBuilder.Entity<Quiz>().HasIndex(x => x.EventId);
+			modelBuilder.Entity<Question>().HasIndex(x => x.Title);
+			modelBuilder.Entity<Answer>().HasIndex(x => x.Choice);
+
 			modelBuilder.Entity<Quiz>()
 				.HasMany(p => p.Questions);
+
+			
 
 			modelBuilder.Entity<Question>()
 				.HasOne(p => p.Quiz);

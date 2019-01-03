@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuizApp.Data.Dal;
 
 namespace QuizApp.Data.Dal.Migrations
 {
     [DbContext(typeof(DalContext))]
-    partial class DalContextModelSnapshot : ModelSnapshot
+    [Migration("20190103003405_AddQuizIdToQuestion")]
+    partial class AddQuizIdToQuestion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,14 +48,14 @@ namespace QuizApp.Data.Dal.Migrations
                         new
                         {
                             Id = "b0dabe9b-f8b7-48f4-b74a-6a6671130765",
-                            ConcurrencyStamp = "0605d53d-441d-456d-88d0-757a6a7427ab",
+                            ConcurrencyStamp = "32834587-8707-4f6f-b84e-8682e3eb3b75",
                             Name = "Admin",
                             NormalizedName = "Admin"
                         },
                         new
                         {
                             Id = "402b9b75-2f6d-4f40-8d59-26ef95c51744",
-                            ConcurrencyStamp = "4925ef11-daeb-488a-b52a-e7156506a6cf",
+                            ConcurrencyStamp = "0517a9be-52fe-42a3-b3bd-814c1f5d3675",
                             Name = "QuizUser",
                             NormalizedName = "Quiz User"
                         });
@@ -134,13 +136,13 @@ namespace QuizApp.Data.Dal.Migrations
                         {
                             Id = "c5713835-f70b-4fbb-ab7e-6e6320bb59ee",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "d08eebb7-eb14-43c2-b5fa-6a830a1a239d",
+                            ConcurrencyStamp = "3697f0dd-8697-4f91-b570-8935f550e577",
                             Email = "russell.griffith+quizapp+admin@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
                             NormalizedUserName = "RUSSELL.GRIFFITH+QUIZAPP+ADMIN@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDm9Tb+BtBxFjAxyqa4saT1YmHPlVOPs3Lhqdc4mhr+ueR5u3ry8Soard1R5vV9zRg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEN9ej5zGXsqozK72G32ErmJyfxVFOodyGiPTd60vKMSPnMDZCuTlhKKE1Yr8xq6t+w==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -150,13 +152,13 @@ namespace QuizApp.Data.Dal.Migrations
                         {
                             Id = "009dc675-6328-4f92-b206-b3311908e306",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "bb73e6f2-af0c-4a33-8cf8-b13a418b3f31",
+                            ConcurrencyStamp = "5e5e7e30-d6e0-4fe9-8667-892efe7cb6a5",
                             Email = "russell.griffith@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "RUSSELL.GRIFFITH@GMAIL.COM",
                             NormalizedUserName = "RUSSELL.GRIFFITH@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDnC1Amp8ycZ5lgd4GtZL1VgoSbZXiQz3QCq8QK4f677ebCaSv1SOw9I/MX5Ig8ssg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEMFQaqRPjv5+nHQxlfO6nXF/iie0e1v/xTfGofEKP+vglnxiJSikCGF8x+L+t85+gA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -248,8 +250,7 @@ namespace QuizApp.Data.Dal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Choice")
-                        .IsRequired();
+                    b.Property<string>("Choice");
 
                     b.Property<DateTime>("Created");
 
@@ -260,8 +261,6 @@ namespace QuizApp.Data.Dal.Migrations
                     b.Property<int>("QuestionId");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Choice");
 
                     b.HasIndex("QuestionId");
 
@@ -291,8 +290,6 @@ namespace QuizApp.Data.Dal.Migrations
 
                     b.HasIndex("QuizId");
 
-                    b.HasIndex("Title");
-
                     b.ToTable("Questions");
                 });
 
@@ -320,10 +317,6 @@ namespace QuizApp.Data.Dal.Migrations
                         .IsRequired();
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EventId");
-
-                    b.HasIndex("Title");
 
                     b.ToTable("Quiz");
                 });

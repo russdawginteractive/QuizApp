@@ -22,7 +22,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Static
 			{
 				new Question
 				{
-					Title ="This is Question One",
+					Title ="This is Question One"
 				}
 			};
 

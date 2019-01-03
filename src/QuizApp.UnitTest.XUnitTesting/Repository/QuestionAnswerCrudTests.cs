@@ -28,7 +28,7 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 			int quizCount = _uow.QuizRepository.GetAll().Count();
 			int questionCount = _uow.QuestionRepository.GetAll().Count();
 			int answerCount = _uow.AnswerRepository.GetAll().Count();
-
+			_fixture.Dispose();
 			// Assert
 			Assert.Equal(1, quizCount);
 			Assert.Equal(1, questionCount);
@@ -44,11 +44,13 @@ namespace QuizApp.UnitTest.XUnitTesting.Repository
 
 			// Act
 			question.CorrectAnswer = correctAnswer;
+			question.CorrectAnswerId = correctAnswer.Id;
 			_uow.QuestionRepository.Update(question);
 			var questionSaved = await _uow.Save();
 			question = _uow.QuestionRepository.GetFirst(x => x.Id == 1);
 			var correctAnswerId = question.CorrectAnswerId;
 			var correctAnswerTitle = question.CorrectAnswer.Choice;
+			_fixture.Dispose();
 
 			// Assert
 			Assert.True(questionSaved);

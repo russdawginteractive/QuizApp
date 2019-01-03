@@ -31,33 +31,46 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests.Common
 
 			// Act 
 			var actionResponse = ODataController.Post(objectToPut);
-
+			
 			//Assert
 			Assert.NotNull(actionResponse);
 			Assert.Equal(TaskStatus.RanToCompletion, actionResponse.Status);
 			Assert.IsType<CreatedODataResult<T>>(actionResponse.Result);
-
+			
 		}
 
 		public virtual void SimplePostTest_ReturnsInvalidModelBadRequest(T objectToPut)
 		{
 			// Act 
 			var badResponse = ODataController.Post(objectToPut);
-
 			//Assert
 			Assert.IsType<BadRequestObjectResult>(badResponse.Result);
 			BadRequestObjectResult badRequestObject = badResponse.Result as BadRequestObjectResult;
 			Assert.Contains("NOT NULL constraint failed", badRequestObject.Value.ToString());
+			
 		}
 
-		public virtual void SimplePatchTest(int recordIdToUpdate, string propertyToUpdate, string properyToUpdateValue)
+		public virtual void SimplePostTest_ReturnsInvalidForeignKeyBadRequest(T objectToPut)
+		{
+			// Act 
+			var badResponse = ODataController.Post(objectToPut);
+			
+			//Assert
+			Assert.IsType<BadRequestObjectResult>(badResponse.Result);
+			BadRequestObjectResult badRequestObject = badResponse.Result as BadRequestObjectResult;
+			Assert.Contains("FOREIGN KEY constraint failed", badRequestObject.Value.ToString());
+			
+		}
+
+
+		public virtual void SimplePatchTest(int recordIdToUpdate, string propertyToUpdate, string propertyToUpdateValue)
 		{
 			// Arrange
 			SingleResult<T> singleResult = ODataController.Get(recordIdToUpdate);
 			T recordToUpdate = singleResult.Queryable.FirstOrDefault();
 
 			var deltaQuiz = new Delta<T>(typeof(T));
-			deltaQuiz.TrySetPropertyValue(propertyToUpdate, properyToUpdateValue);
+			deltaQuiz.TrySetPropertyValue(propertyToUpdate, propertyToUpdateValue);
 
 
 			// Act
@@ -73,9 +86,9 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests.Common
 			Type recordType = recordUpdated.GetType();
 			PropertyInfo propertyUpdated = recordType.GetProperty(propertyToUpdate);
 			var updatedValue = propertyUpdated.GetValue(recordUpdated);
-			Assert.Equal(properyToUpdateValue, updatedValue.ToString());
+			Assert.Equal(propertyToUpdateValue, updatedValue.ToString());
 
-
+			
 		}
 
 		public virtual void SimplePatchTest_ResultInvalidModelBadRequest(int recordIdToUpdate, string propertyToUpdate)
@@ -86,7 +99,7 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests.Common
 			T recordToUpdate = singleResult.Queryable.FirstOrDefault();
 
 			var deltaQuiz = new Delta<T>(typeof(T));
-			deltaQuiz.TrySetPropertyValue("Title", null);
+			deltaQuiz.TrySetPropertyValue(propertyToUpdate, null);
 
 
 			// Act
@@ -94,7 +107,7 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests.Common
 
 			// Assert
 			Assert.IsType<BadRequestObjectResult>(badResponse.Result);
-
+			
 		}
 
 		public void SimpleDeleteTestAsync(T objectToDelete)
@@ -117,6 +130,7 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests.Common
 			Assert.NotNull(result);
 			var noContentResult = result.Result as NoContentResult;
 			Assert.Equal(204, noContentResult.StatusCode);
+			
 		}
 	}
 }

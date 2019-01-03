@@ -2,12 +2,14 @@
 using QuizApp.Data.Entities.Models;
 using QuizApp.UnitTest.XUnitTesting.ApiTests.Common;
 using QuizApp.UnitTest.XUnitTesting.Fixture;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 {
-	public class QuizApiCrudTests : OdataCrudTests<Quiz>
+	public class QuizCrudTests : OdataCrudTests<Quiz>
 	{
 		public static IEnumerable<object[]> GoodData =>
 			new List<Quiz[]>
@@ -18,7 +20,7 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 					{
 						Title = "Unit Test Quiz",
 						Description = "This is a simple Unit Test Quiz",
-						EventId = "3421",
+						EventId = new Guid().ToString(),
 						PathToQuizReference = "http://youtube.com"
 					}
 				}
@@ -37,14 +39,14 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 		public static IEnumerable<object[]> GoodPatchData =>
 			new List<object[]>
 			{
-				new object[] {1, "Title", "Patch Test Quiz Update"},
-				new object[] {1, "Description", "This is the question one update description"},
-				new object[] {1, "EventId", "4321"}
+				new object[] {0, "Title", "Patch Test Quiz Update"},
+				new object[] {0, "Description", "This is the question one update description"},
+				new object[] {0, "EventId", new Guid().ToString()}
 			};
 		public static IEnumerable<object[]> BadPatchData =>
 			new List<object[]>
 			{
-					new object[] {1, "Title"},
+					new object[] {0, "Title"},
 			};
 
 		public static IEnumerable<object[]> QuizToDelete =>
@@ -61,7 +63,7 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 				}
 			};
 
-		public QuizApiCrudTests(DalContextFixture fixture) : base(fixture)
+		public QuizCrudTests(DalContextFixture fixture) : base(fixture)
 		{
 
 			ODataController = new QuizController(ODataTestUnitOfWork);
@@ -83,15 +85,17 @@ namespace QuizApp.UnitTest.XUnitTesting.ApiTests
 
 		[Theory]
 		[MemberData(nameof(GoodPatchData))]
-		public void QuizSimplePatchTests(int recordIdToUpdate, string propertyToUpdate, string properyToUpdateValue)
+		public void QuizSimplePatchTests(int idToUpdate, string propertyToUpdate, string propertyToUpdateValue)
 		{
-			SimplePatchTest(recordIdToUpdate, propertyToUpdate, properyToUpdateValue);
+			Quiz lastQuiz = ODataTestUnitOfWork.QuizRepository.Get().LastOrDefault();
+			SimplePatchTest(lastQuiz.Id, propertyToUpdate, propertyToUpdateValue);
 		}
 		[Theory]
 		[MemberData(nameof(BadPatchData))]
-		public void QuizSimplePatchTests_ResultInvalidModelBadReques(int recordIdToUpdate, string propertyToUpdate)
+		public void QuizSimplePatchTests_ResultInvalidModelBadReques(int idToUpdate, string propertyToUpdate)
 		{
-			SimplePatchTest_ResultInvalidModelBadRequest(recordIdToUpdate, propertyToUpdate);
+			Quiz lastQuiz = ODataTestUnitOfWork.QuizRepository.Get().LastOrDefault();
+			SimplePatchTest_ResultInvalidModelBadRequest(lastQuiz.Id, propertyToUpdate);
 		}
 
 		[Theory]
