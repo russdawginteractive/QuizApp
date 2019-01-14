@@ -6,8 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json.Serialization;
 using QuizApp.Data.Dal;
 using QuizApp.Data.Services;
+using Simple.OData.Client;
+using System;
 
 namespace QuizApp.FrontEnd
 {
@@ -37,8 +40,14 @@ namespace QuizApp.FrontEnd
 			services.AddDefaultIdentity<IdentityUser>()
 				.AddEntityFrameworkStores<DalContext>();
 			services.DataServicesStartup();
+			services.AddTransient(s => new ODataClient(new ODataClientSettings(new Uri("https://localhost:44374/odata/")) {
+				IgnoreResourceNotFoundException = false,
+				OnTrace = (x, y) => Console.WriteLine(string.Format(x, y))
+			}));
 
-			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+				.AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
+			services.AddKendo();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

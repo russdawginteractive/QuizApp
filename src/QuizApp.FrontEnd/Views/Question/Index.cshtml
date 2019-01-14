@@ -1,0 +1,194 @@
+﻿@model IEnumerable<QuizApp.Data.Entities.Models.Question>
+
+@{
+	ViewData["Title"] = "Index";
+	var QuizId = (int)ViewData["QuizId"];
+}
+
+<h2>Index</h2>
+<div class="demo-section k-content wide">
+	<form asp-action="Create" method="post" enctype="application/x-www-form-urlencoded">
+		<a class="k-button k-button-icontext k-add-button" id="btnQuestion" href="\\#"><span class="k-icon k-i-add"></span>Add new record</a>
+		@*<input type="hidden" name="QuizId" id="QuizId" asp-for="@QuizId" />*@
+		<div class="quiz-view k-widget">
+			<ol id="questionList"></ol>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Save" class="btn btn-default" />
+		</div>
+	</form>
+</div>
+<script id="questionTemplate" type="text/x-kendo-template">
+	<li id="questionDiv_#= index #" class="question">
+		<strong>Question</strong><br />
+		<input type="hidden" name="Question[#= index #].QuizId" id="Question[#= index #].QuizId" value="@QuizId" />
+		<input type="text" name="Question[#= index #].Title" id="Question[#= index #].Title" />
+		<ol id="answerDiv_#= index#" class="answerContainer"></ol>
+		<a class="k-button k-button-icontext k-answer" rel="#: index#" href="\\#"><span class="k-icon k-i-add"></span>Add Answer</a>
+	</li>
+</script>
+
+<script id="answerTemplate" type="text/x-kendo-template">
+	<li class="answer">
+		<strong>Answer</strong><br />
+		<input type="text" name="Question[#= index #].Answers[#= answerIndex #].Choice" id="Question[#= index #].Answers[#= answerIndex #].Choice"  />
+		<input name="Question[#= index #].CorrectAnswerIndex" id="Question[#= index #].CorrectAnswer" value="#= answerIndex #" type="radio"  /> Correct Answer?<br />
+		<strong>Explanation</strong><br />
+		<textarea name="Question[#= index #].Answers[#= answerIndex #].Explanation" id="Question[#= index #].Answers[#= answerIndex #].Explanation"  />
+	</li>
+</script>
+	<script type="text/x-kendo-tmpl" id="template">
+		<div class="quiz-view k-widget">
+			<dl>
+				<dt>Question</dt>
+				<dd>#:Title#</dd>
+			</dl>
+			<div class="edit-buttons">
+				<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-i-edit"></span></a>
+				<a class="k-button k-delete-button" href="\\#"><span class="k-icon k-i-delete"></span></a>
+			</div>
+		</div>
+	</script>
+
+	<script>
+		function parameterMap(options, operation) {
+			//if (operation !== "read" && options.models) {
+			//    return { models: kendo.stringify(options.models) };
+			//}
+		}
+
+		$(function () {
+			var questionTemplate = kendo.template($("#questionTemplate").html());
+			var answerTemplate = kendo.template($("#answerTemplate").html());
+			
+
+			var counter = -1;
+			
+			$(".k-add-button").click(function (e) {
+				e.preventDefault();
+				var answerCounter = 0;
+				counter++;
+				var data = { index: counter };
+				
+				$("#questionList").append(questionTemplate(data));
+
+				
+				$("#questionDiv_" + counter + " .k-answer").click(function (e) {
+					e.preventDefault();
+					var myCounter = $(this).attr("rel");
+					//alert('fired_'+ myCounter + "_" + answerCounter);
+					var data = { index: myCounter, answerIndex: answerCounter };
+					$("#answerDiv_" + myCounter).append(answerTemplate(data));
+					answerCounter++;
+				});
+				//$("#questionDiv_" + counter).click(function () {
+				//	$(this).find('ol').slideToggle();
+				//});
+				
+				
+			});
+			
+		});
+	</script>
+<style type="text/css">
+
+	.answerContainer {padding-left: 30px;}
+	.question {
+		border-top: 2px solid black;
+		padding-top: 10px;
+		width: 50%;
+		margin-top: 10px;
+	}
+	.answer {padding-bottom: 10px;}
+	ol#questionList li input[type=text] {width: 30em;}
+
+	ol#questionList li input[type=radio] {
+		width:2em;
+	}
+	ol#questionList li ol li input[type=text] {
+		width: 20em;
+	}
+	ol#questionList li ol li textarea {
+		width: 20em;
+		height: 30px;
+	}
+	/*ol#questionList {
+		-moz-column-count: 2;
+		-moz-column-gap: 40px;
+		-webkit-column-count: 2;
+		-webkit-column-gap: 40px;
+		column-count: 2;
+		column-gap: 40px;
+	}
+		ol#questionList li {
+			float: left;
+			width: 10em;
+		}*/
+</style>
+	@*<div id="gridContainer">
+			@(Html.Kendo().Grid<QuizApp.Data.Entities.Models.Question>()
+				.Name("questionEditGrid")
+				.Columns(columns =>
+				{
+					columns.Bound(c => c.Title).Width(140);
+					columns.Bound(c => c.ContactTitle).Width(190);
+					columns.Bound(c => c.CompanyName);
+					columns.Bound(c => c.Country).Width(110);
+				})
+			)
+		</div>*@
+	@*<p>
+			<a asp-action="Create">Create New</a>
+		</p>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>
+						@Html.DisplayNameFor(model => model.Title)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Quiz)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.CorrectAnswer)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Created)
+					</th>
+					<th>
+						@Html.DisplayNameFor(model => model.Modified)
+					</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+		@if (Model != null)
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.Title)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Quiz.Description)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.CorrectAnswer.Choice)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Created)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.Modified)
+					</td>
+					<td>
+						<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+						<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+						<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					</td>
+				</tr>
+			}
+		}
+			</tbody>
+		</table>*@

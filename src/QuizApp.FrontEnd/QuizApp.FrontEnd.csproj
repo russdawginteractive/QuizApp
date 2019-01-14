@@ -13,14 +13,29 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Simple.OData.Client" Version="5.6.2" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2018.3.1017" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\QuizApp.Data.Dal\QuizApp.Data.Dal.csproj" />
     <ProjectReference Include="..\QuizApp.Data.Services\QuizApp.Data.Services.csproj" />
+    <ProjectReference Include="..\QuizApp.Middleware.Services\QuizApp.Middleware.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\kendo-ui\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
   </ItemGroup>
 
 </Project>

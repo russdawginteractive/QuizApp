@@ -13,6 +13,7 @@ namespace QuizApp.Data.Entities.Models
 		public string Description { get; set; }
 		[StringLength(10)]
 		public string EventId { get; set; }
+		[DisplayName("YouTube URL")]
 		public string PathToQuizReference { get; set; }
 		[DefaultValue(false)]
 		public bool Active { get; set; }

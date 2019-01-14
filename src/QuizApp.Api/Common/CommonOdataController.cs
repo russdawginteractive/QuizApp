@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using QuizApp.Api.Controllers;
 using QuizApp.Api.Interface;
 using QuizApp.Data.Core.Common;
 using QuizApp.Data.Entities.Base;
